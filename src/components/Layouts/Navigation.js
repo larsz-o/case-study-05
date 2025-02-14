@@ -4,7 +4,7 @@ import Body from "./HTMLRender";
 import { Dialog, DialogContent } from "@mui/material";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import swal from "sweetalert";
+
 
 const editorConfiguration = {
   toolbar: ["bold", "italic", "hyperlink", "|", "undo", "redo"],
@@ -34,22 +34,7 @@ const Navigation = (props) => {
     changeCheckpoint(false);
   }
 
-  function confirmEnd() {
-    swal({
-      title: "Are you sure?",
-      text: "Are you sure you want to end this lesson? All of your data will be erased.",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        props.updateScene(props.lesson[2]);
-        props.updateLayoutNumber(1)
-      } else {
-        swal({ icon: "success", text: "Okay, continue on." });
-      }
-    });
-  }
+ 
   function getPreviousScene() {
     console.log(props)
     let thisScene = props.activeScene.navigation[0].previous_scene;
