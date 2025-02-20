@@ -234,6 +234,7 @@ const DecisionLayout = (props) => {
                   next
                 </button>
               </div>
+              
             )}</div>):(<div>{decisionData[index].type === "open" ? (<div className="decision-area flex-box">
             {decisionData[index].options.map((option, i) => {
               return (
